@@ -12,4 +12,8 @@ describe('first()', () => {
   it('returns the whole array if you ask for more elements than it has', () => {
     expect(_.first(['a', 'b', 'c'], 5)).toEqual(['a', 'b', 'c']);
   });
+
+  it('returns an empty array if we pass an empty array', () => {
+    expect(_.first([], 2)).toEqual([]);
+  });
 });
