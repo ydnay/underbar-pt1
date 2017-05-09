@@ -30,7 +30,8 @@ const isArrayLike = function (obj) {
   return typeof length === 'number' && length >= 0;
 };
 
-// The cornerstone of a functional library -- iterate all elements, pass each to a callback function.
+// The cornerstone of a functional library -- iterate all elements, pass each to
+// a callback function.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 const each = function (obj, callback=identity) {
   if (isArrayLike(obj)) {

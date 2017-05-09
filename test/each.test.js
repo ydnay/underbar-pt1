@@ -4,10 +4,11 @@ describe('each()', () => {
   it('iterates every element of an array, passing that element, its corresponding index, and the entire array to the callback', () => {
     const arr = ['a', 'b', 'c'];
     let count = 0;
-    _.each(arr, function(element, index, array) {
+    _.each(arr, function (element, index, array) {
       expect(element).toEqual(array[index]);
       count += 1;
     });
+
     expect(count).toBe(3);
   });
 
@@ -16,13 +17,14 @@ describe('each()', () => {
       length: 3,
       1: 'a',
       2: 'b',
-      3: 'c'
+      3: 'c',
     };
     let count = 0;
-    _.each(arrayLikeObj, function(element, index, iteratedArrayLikeObj) {
+    _.each(arrayLikeObj, function (element, index, iteratedArrayLikeObj) {
       expect(element).toEqual(iteratedArrayLikeObj[index]);
       count += 1;
     });
+
     expect(count).toBe(3);
   });
 
@@ -30,14 +32,25 @@ describe('each()', () => {
     const obj = {
       name: 'Calvin',
       age: 6,
-      occupation: 'student'
+      occupation: 'student',
     };
     let count = 0;
-    _.each(obj, function(value, key, iteratedObj) {
+    _.each(obj, function (value, key, iteratedObj) {
       expect(value).toEqual(iteratedObj[key]);
       count += 1;
     });
+
     expect(count).toBe(3);
   });
-});
 
+  it('iterates over an empty object', () => {
+    const emptyObj = {};
+    let count = 0;
+    _.each(emptyObj, function (value, key, iteratedObj) {
+      expect(value).toEqual(iteratedObj[key]);
+      count += 1;
+    });
+
+    expect(count).toBe(0);
+  });
+});
