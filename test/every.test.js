@@ -18,4 +18,15 @@ describe('every()', () => {
     });
 
   });
+
+  describe('procesing an object', () => {
+    it('will return true if all the object.key are number type', () => {
+      const obj = {
+        0: 0,
+        1: 'HelloWorld',
+        2: 2,
+      };
+      expect(_.every(obj, value => typeof (value) === 'number')).toBe(false);
+    });
+  });
 });
