@@ -16,8 +16,14 @@ describe('identity()', () => {
 
   it('returns the same object if given an object', () => {
     const val = {
-      'foo': 'bar'
+      foo: 'bar',
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns the same string if given a string ', () => {
+    const val = 'HelloWorld';
+    expect(_.identity(val)).toBe(val);
+  });
+
 });
