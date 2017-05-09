@@ -7,15 +7,20 @@ describe('isArrayLike()', () => {
 
   it('returns true for an array-like object', () => {
     const arrayLikeObj = {
-      length: 10
+      length: 10,
     };
     expect(_.isArrayLike(arrayLikeObj)).toBe(true);
   });
 
   it('returns false for a non-array-like object', () => {
     const nonArrayLikeObj = {
-      'foo': 'bar'
+      foo: 'bar',
     };
+    expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
+  });
+
+  it('returns false for a number', () => {
+    const nonArrayLikeObj = 5;
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
 });
