@@ -11,4 +11,12 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('returns true if any prop value is not null', () => {
+    const songs = {
+      hey: null,
+      Jude: null,
+    };
+    expect(_.some(songs, objInKey => objInKey !== null)).toBe(false);
+  });
+
 });
